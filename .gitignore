@@ -1,0 +1,10 @@
+### Local properties needs to be ignored due to it only being necessary for ones current system. ###
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
