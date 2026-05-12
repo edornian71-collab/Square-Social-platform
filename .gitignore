@@ -1,5 +1,6 @@
 ### Local properties needs to be ignored due to it only being necessary for ones current system. ###
 *.iml
+.idea/
 .gradle/
 /local.properties
 /.idea/workspace.xml
