@@ -1,6 +1,5 @@
-package com.example.sqauresocialplatform.ui.theme
+package com.example.squaresocialplatform.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

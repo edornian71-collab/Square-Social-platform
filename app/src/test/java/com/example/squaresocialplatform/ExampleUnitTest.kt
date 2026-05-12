@@ -1,4 +1,4 @@
-package com.example.sqauresocialplatform
+package com.example.squaresocialplatform
 
 import org.junit.Test
 

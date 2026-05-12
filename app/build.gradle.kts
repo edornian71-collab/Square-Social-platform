@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sqauresocialplatform"
+    namespace = "com.example.squaresocialplatform"
     compileSdk {
         version = release(37)
     }
