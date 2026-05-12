@@ -13,5 +13,7 @@ class LoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.loginlayout)
 
+
+
     }
 }
