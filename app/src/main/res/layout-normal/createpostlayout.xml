@@ -9,8 +9,8 @@
         android:id="@+id/postButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button_bg"
         android:text="Post"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,8 +18,8 @@
 
     <EditText
         android:id="@+id/editPostField"
-        android:layout_width="358dp"
-        android:layout_height="195dp"
+        android:layout_width="361dp"
+        android:layout_height="563dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/textfield"
         android:ems="10"
@@ -30,16 +30,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintVertical_bias="0.497" />
 
     <TextView
         android:id="@+id/usernameText"
-        android:layout_width="166dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="110dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="52dp"
         android:text="Username"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,9 +47,31 @@
         android:id="@+id/button"
         android:layout_width="44dp"
         android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:background="@drawable/exitbutton"
         android:text="X"
         android:textSize="24dp"
-        tools:layout_editor_absoluteX="361dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Post"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:background="@drawable/avatarimage"
+        android:clipToOutline="true"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="42dp"
+        tools:src="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
