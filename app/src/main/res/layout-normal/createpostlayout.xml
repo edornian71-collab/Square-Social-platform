@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,29 +9,47 @@
         android:id="@+id/postButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="248dp"
         android:background="@drawable/button_bg"
         android:text="Post"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="440dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editPostField"
         android:layout_width="358dp"
         android:layout_height="195dp"
+        android:layout_marginStart="24dp"
         android:background="@drawable/textfield"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"
         android:ems="10"
         android:inputType="text"
         android:text="Post Text"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="238dp" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.427" />
 
     <TextView
         android:id="@+id/usernameText"
         android:layout_width="166dp"
         android:layout_height="19dp"
+        android:layout_marginTop="16dp"
         android:text="Username"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="212dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="44dp"
+        android:layout_height="38dp"
+        android:background="@drawable/exitbutton"
+        android:text="X"
+        android:textSize="24dp"
+        tools:layout_editor_absoluteX="361dp"
+        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
