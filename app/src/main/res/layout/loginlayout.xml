@@ -3,34 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-72dp">
 
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="201dp"
         android:layout_height="81dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="484dp"
+        android:background="@drawable/avatarimage"
+        android:backgroundTint="@color/squareblue"
         android:text="Login"
-        android:background="#0EBFE2"
         android:textColor="@color/black"
         android:textSize="60px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="241dp"
         android:layout_height="52dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="288dp"
         android:autofillHints="Email"
         android:ems="10"
         android:hint="example@mail.com"
-        android:textColor="@color/lightgrey"
         android:inputType="textEmailAddress"
+        android:textColor="@color/lightgrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,12 +41,12 @@
         android:id="@+id/password"
         android:layout_width="241dp"
         android:layout_height="52dp"
-        android:layout_marginTop="452dp"
+        android:layout_marginTop="376dp"
         android:autofillHints="Password"
         android:ems="10"
         android:hint="Password"
-        android:textColor="@color/lightgrey"
         android:inputType="numberPassword"
+        android:textColor="@color/lightgrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +56,7 @@
         android:id="@+id/title"
         android:layout_width="412dp"
         android:layout_height="82dp"
-        android:layout_marginTop="260dp"
+
         android:background="#0EBFE2"
         android:fontFamily="casual"
         android:padding="16dp"
@@ -66,15 +67,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/emailSideText"
         android:layout_width="50dp"
         android:layout_height="20dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="304dp"
         android:text="Email:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/email"
@@ -86,24 +86,22 @@
         android:id="@+id/passSideText"
         android:layout_width="80dp"
         android:layout_height="20dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="468dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="392dp"
         android:text="Password:"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/password"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/square_social_media_icon_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
