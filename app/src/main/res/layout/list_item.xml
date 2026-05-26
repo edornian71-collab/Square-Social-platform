@@ -3,34 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="182dp"
+    android:layout_margin="20dp"
+
+    android:background="@drawable/button_bg"
+
+    >
 
     <TextView
         android:id="@+id/post"
-        android:layout_width="390dp"
+        android:layout_width="0dp"
         android:layout_height="105dp"
-        android:layout_marginEnd="244dp"
-        android:layout_marginBottom="536dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="36dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/username" />
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="58dp"
-        android:layout_height="19dp"
-        android:layout_marginEnd="344dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="63dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginBottom="8dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/post"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/Comments"
-        android:layout_width="94dp"
-        android:layout_height="35dp"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
         android:text="Comments"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post" />
