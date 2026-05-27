@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
-    ArrayList<item> items;
+    ArrayList<FeedItem> FeedItems;
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView usernameTv;
@@ -28,8 +28,8 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
     }
 
-    public Feed(ArrayList<item> items) {
-        this.items = items;
+    public Feed(ArrayList<FeedItem> items) {
+        this.FeedItems = items;
 
     }
 
@@ -42,7 +42,7 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull Feed.MyViewHolder holder, int position) {
-        item currentItem = items.get(position);
+        FeedItem currentItem = FeedItems.get(position);
 
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
@@ -51,6 +51,6 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return FeedItems.size();
     }
 }
