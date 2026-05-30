@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Grab UI elements from layout
         etUserName = findViewById(R.id.userName)
-        etEmail    = findViewById(R.id.newEmail)
+        etEmail = findViewById(R.id.newEmail)
         etPassword = findViewById(R.id.newPass)
         btnRegister = findViewById(R.id.regBtn)
 
@@ -36,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
 
             // Pull text from inputs
             val username = etUserName.text.toString().trim()
-            val email    = etEmail.text.toString().trim()
+            val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
             // Basic empty check — no blank fields allowed
@@ -53,7 +53,8 @@ class RegisterActivity : AppCompatActivity() {
 
             // Simple password rule — at least 6 chars
             if (password.length < 6) {
-                Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 

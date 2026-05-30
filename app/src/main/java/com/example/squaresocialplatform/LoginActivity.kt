@@ -24,15 +24,15 @@ class LoginActivity : AppCompatActivity() {
         db = DatabaseHelper(this)
 
         // Hook up UI elements
-        etEmail    = findViewById(R.id.email)
+        etEmail = findViewById(R.id.email)
         etPassword = findViewById(R.id.password)
-        btnLogin   = findViewById(R.id.loginBtn)
+        btnLogin = findViewById(R.id.loginBtn)
 
         // When user taps "Login"
         btnLogin.setOnClickListener {
 
             // Grab text from inputs
-            val email    = etEmail.text.toString().trim()
+            val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
             // Basic empty-field check
