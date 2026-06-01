@@ -7,6 +7,20 @@
 
 
     <Button
+        android:id="@+id/regBtn"
+        android:layout_width="201dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="640dp"
+        android:background="#0EBFE2"
+        android:text="Register"
+        android:textColor="@color/black"
+        android:textSize="60px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
         android:id="@+id/loginBtn"
         android:layout_width="201dp"
         android:layout_height="81dp"
@@ -93,6 +107,17 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/password"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/square_social_media_icon_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
