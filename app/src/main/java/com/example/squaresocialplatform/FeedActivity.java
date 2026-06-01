@@ -73,7 +73,7 @@ public class FeedActivity extends ComponentActivity {
     }
 
     public void goToNewPost(){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, CreatePostActivity.class);
         startActivity(intent);
     }
 }
