@@ -26,6 +26,10 @@
             android:name=".RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.SqaureSocialPlatform" />
+        <activity
+            android:name=".CreatePostActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SqaureSocialPlatform" />
     </application>
 
 </manifest>
