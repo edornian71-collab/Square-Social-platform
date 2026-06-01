@@ -1,6 +1,7 @@
 ### Local properties needs to be ignored due to it only being necessary for ones current system. ###
 *.iml
-.gradle
+.idea/
+.gradle/
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -8,3 +9,4 @@
 /build
 /captures
 .externalNativeBuild
+app/build
