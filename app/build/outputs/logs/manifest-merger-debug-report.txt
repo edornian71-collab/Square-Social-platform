@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-27:12
+ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [androidx.databinding:viewbinding:9.2.1] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\66f96cb95886cc7dd29c89fb86b6756b\transformed\viewbinding-9.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.4.0] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\1eaf80536868fa18ecf7a4e8646cb5ec\transformed\material3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.10.4] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\9000b53b27c5d9a84c560721c750eae5\transformed\material\AndroidManifest.xml:2:1-7:12
@@ -90,8 +90,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\hennig3326\.gradle\caches\9.4.
 	xmlns:android
 		ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:5:5-25:19
-INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:5:5-25:19
+ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:5:5-28:19
+INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:5:5-28:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\5f3d3afa34721a8c96010851f8410cb8\transformed\ui-tooling\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\5f3d3afa34721a8c96010851f8410cb8\transformed\ui-tooling\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] C:\Users\hennig3326\.gradle\caches\9.4.1\transforms\7309a3320bdf63335e5a850be859a1e2\transformed\ui-test-manifest-1.10.4\AndroidManifest.xml:22:5-27:19
@@ -152,6 +152,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.example.squaresocialplatform.LoginActivity
+ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:25:9-27:20
+	android:name
+		ADDED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml:26:13-42
 uses-sdk
 INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\AndroidManifest.xml

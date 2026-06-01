@@ -4,6 +4,7 @@ package com.example.squaresocialplatform.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,7 +23,13 @@ public final class ProfilelayoutBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton goHome;
+
+  @NonNull
   public final ImageView profilePicture;
+
+  @NonNull
+  public final ImageButton userSwitch2;
 
   @NonNull
   public final TextView username;
@@ -30,11 +37,13 @@ public final class ProfilelayoutBinding implements ViewBinding {
   @NonNull
   public final RecyclerView usersPosts;
 
-  private ProfilelayoutBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView profilePicture, @NonNull TextView username,
-      @NonNull RecyclerView usersPosts) {
+  private ProfilelayoutBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton goHome,
+      @NonNull ImageView profilePicture, @NonNull ImageButton userSwitch2,
+      @NonNull TextView username, @NonNull RecyclerView usersPosts) {
     this.rootView = rootView;
+    this.goHome = goHome;
     this.profilePicture = profilePicture;
+    this.userSwitch2 = userSwitch2;
     this.username = username;
     this.usersPosts = usersPosts;
   }
@@ -66,9 +75,21 @@ public final class ProfilelayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.goHome;
+      ImageButton goHome = ViewBindings.findChildViewById(rootView, id);
+      if (goHome == null) {
+        break missingId;
+      }
+
       id = R.id.profilePicture;
       ImageView profilePicture = ViewBindings.findChildViewById(rootView, id);
       if (profilePicture == null) {
+        break missingId;
+      }
+
+      id = R.id.userSwitch2;
+      ImageButton userSwitch2 = ViewBindings.findChildViewById(rootView, id);
+      if (userSwitch2 == null) {
         break missingId;
       }
 
@@ -84,8 +105,8 @@ public final class ProfilelayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ProfilelayoutBinding((ConstraintLayout) rootView, profilePicture, username,
-          usersPosts);
+      return new ProfilelayoutBinding((ConstraintLayout) rootView, goHome, profilePicture,
+          userSwitch2, username, usersPosts);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

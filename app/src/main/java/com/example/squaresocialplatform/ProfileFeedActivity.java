@@ -1,7 +1,9 @@
 package com.example.squaresocialplatform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
@@ -12,7 +14,6 @@ import com.example.squaresocialplatform.databinding.ProfilelayoutBinding;
 import java.util.ArrayList;
 
 public class ProfileFeedActivity extends ComponentActivity {
-
     ArrayList<ProfileFeedItem> listItem = new ArrayList<>();
 
     @Override
@@ -35,5 +36,19 @@ public class ProfileFeedActivity extends ComponentActivity {
 
         binding.usersPosts.setAdapter(pf);
         binding.usersPosts.setLayoutManager(new LinearLayoutManager(this));
+
+        binding.goHome.setOnClickListener(thing -> goToHome());
+
+        binding.userSwitch2.setOnClickListener(thing -> goToLogin());
+    }
+
+    public void goToHome(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-#Wed May 27 13:29:22 CST 2026
+#Mon Jun 01 12:44:05 CST 2026
 base.0=C\:\\Users\\hennig3326\\AndroidStudioProjects\\Square-Social-platform\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\hennig3326\\AndroidStudioProjects\\Square-Social-platform\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\hennig3326\\AndroidStudioProjects\\Square-Social-platform\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

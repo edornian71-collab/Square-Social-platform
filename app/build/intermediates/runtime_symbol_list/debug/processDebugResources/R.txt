@@ -952,7 +952,9 @@ int drawable btn_radio_off_to_on_mtrl_animation 0x7f06005d
 int drawable btn_radio_on_mtrl 0x7f06005e
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f06005f
 int drawable button_bg 0x7f060060
+int drawable copper_stockpfp 0x7f06007c
 int drawable exitbutton 0x7f060061
+int drawable home_button_placeholder 0x7f06007d
 int drawable ic_call_answer 0x7f060062
 int drawable ic_call_answer_low 0x7f060063
 int drawable ic_call_answer_video 0x7f060064
@@ -976,6 +978,7 @@ int drawable notification_tile_bg 0x7f060075
 int drawable notify_panel_notification_icon_bg 0x7f060076
 int drawable post_bg 0x7f060077
 int drawable square_social_media_icon_dark 0x7f060078
+int drawable switchacc_placeholder 0x7f06007e
 int drawable textfield 0x7f060079
 int drawable tooltip_frame_dark 0x7f06007a
 int drawable tooltip_frame_light 0x7f06007b
@@ -1149,6 +1152,7 @@ int id forever 0x7f0700a6
 int id frost 0x7f0700a7
 int id ghost_view 0x7f0700a8
 int id ghost_view_holder 0x7f0700a9
+int id goHome 0x7f070176
 int id gone 0x7f0700aa
 int id graph 0x7f0700ab
 int id graph_wrap 0x7f0700ac
@@ -1332,6 +1336,7 @@ int id unchecked 0x7f07015d
 int id uniform 0x7f07015e
 int id up 0x7f07015f
 int id useLogo 0x7f070160
+int id userSwitch2 0x7f070177
 int id username 0x7f070161
 int id usernameText 0x7f070162
 int id usersPosts 0x7f070163
