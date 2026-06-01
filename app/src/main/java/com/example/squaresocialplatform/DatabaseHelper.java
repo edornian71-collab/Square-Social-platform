@@ -59,5 +59,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return found;
     }
+    public boolean ifEmailAlreadyExists(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=?", new String[]{email});
+        boolean found = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return found;
+    }
 
 }
