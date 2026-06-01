@@ -1,5 +1,6 @@
 package com.example.squaresocialplatform
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,12 +9,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.databasehelper.DatabaseHelper
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : Activity() {
 
     // UI elements + DB helper
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
+
+    private lateinit var btnRegister:Button
     private lateinit var db: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.email)
         etPassword = findViewById(R.id.password)
         btnLogin = findViewById(R.id.loginBtn)
+        btnRegister = findViewById(R.id.regBtn)
 
         // When user taps "Login"
         btnLogin.setOnClickListener {
@@ -53,6 +57,12 @@ class LoginActivity : AppCompatActivity() {
                 // Wrong email or password
                 Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnRegister.setOnClickListener{
+
+            setContentView(R.layout.registrationlayout)
+
         }
     }
 }

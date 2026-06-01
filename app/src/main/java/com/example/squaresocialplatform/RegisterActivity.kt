@@ -1,5 +1,6 @@
 package com.example.squaresocialplatform
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.databasehelper.DatabaseHelper
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : Activity() {
 
     // Inputs + button + DB helper
     // (lateinit because we hook them up in onCreate)
