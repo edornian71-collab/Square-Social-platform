@@ -1,6 +1,8 @@
 package com.example.squaresocialplatform;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -36,6 +38,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Posts");
         db.execSQL("DROP TABLE IF EXISTS Users");
         onCreate(db);
+    }
+    public boolean registerUser(String username, String password, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("Username", username);
+        values.put("Password", password);
+        values.put("Email", email);
+        long attempt = db.insert("Users", null, values);
+        boolean ifAttemptSuccess = attempt != -1;
+        db.close();
+        return ifAttemptSuccess;
+    }
+    public boolean loginUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=? AND Password=?", new String[]{email, password});
+        boolean found = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return found;
     }
 
 }
