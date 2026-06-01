@@ -2,10 +2,13 @@ package com.example.squaresocialplatform
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.edit
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.loginBtn)
         btnRegister = findViewById(R.id.regBtn)
 
+
+
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -35,9 +40,15 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val loggedIn = db.loginUser(email, password)
+            val loggedInUser = db.loginUser(email, password)
 
-            if (loggedIn) {
+            if (loggedInUser != null) {
+                val prefs = getSharedPreferences("session", MODE_PRIVATE)
+                prefs.edit {
+                    putString("username", loggedInUser.username)
+                    putString("email",loggedInUser.email)
+                    putInt("userId", loggedInUser.id)
+                }
                 Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, CreatePostActivity::class.java))
                 finish()
