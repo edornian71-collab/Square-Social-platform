@@ -20,17 +20,23 @@ public class FeedActivity extends ComponentActivity {
 
     DatabaseHelper db = new DatabaseHelper(this);
 
-    ArrayList<FeedItem> listItem = db.fetchItem();
+    ArrayList<FeedItem> listItem;
+    Feed feed;
+
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 
+
         super.onCreate(savedInstanceState);
         FeedLayoutBinding binding = FeedLayoutBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        listItem = db.getAllPosts();
+
+
 //        listItem.add(new FeedItem("241", "adasd"));
 //        listItem.add(new FeedItem("3523", "sdfata"));
 //        listItem.add(new FeedItem("588", "gsdfkgjae"));
@@ -45,7 +51,7 @@ public class FeedActivity extends ComponentActivity {
 //        listItem.add(new FeedItem("888847", "bjwbefiubiwubef"));
 //        listItem.add(new FeedItem("45654", "biwavbecbvifawb"));
 
-        Feed feed = new Feed(listItem);
+        feed = new Feed(listItem);
 
         binding.scroll.setAdapter(feed);
 
@@ -61,6 +67,15 @@ public class FeedActivity extends ComponentActivity {
 
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listItem = db.getAllPosts();
+        feed.FeedItems = listItem;
+        feed.notifyDataSetChanged();
+    }
+
 
     public void goToProfile(){
         Intent intent = new Intent(this, LoginActivity.class);

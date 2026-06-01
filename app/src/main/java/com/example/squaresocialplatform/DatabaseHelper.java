@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Handles creation and access to the local SQLite database.
  * Provides methods for user registration, login, and post creation.
