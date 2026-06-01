@@ -4,9 +4,8 @@ public class FeedItem {
     String username;
     String post;
 
-    public FeedItem(String username, String post) {
-        this.post = post;
-        this.username = username;
+    public FeedItem() {
+
     }
 
 }

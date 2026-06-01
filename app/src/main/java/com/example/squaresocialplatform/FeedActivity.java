@@ -18,7 +18,9 @@ import java.util.ArrayList;
 
 public class FeedActivity extends ComponentActivity {
 
-    ArrayList<FeedItem> listItem = new ArrayList<>();
+    DatabaseHelper db = new DatabaseHelper(this);
+
+    ArrayList<FeedItem> listItem = db.fetchItem();
 
 
     @Override
@@ -29,19 +31,19 @@ public class FeedActivity extends ComponentActivity {
         FeedLayoutBinding binding = FeedLayoutBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        listItem.add(new FeedItem("241", "adasd"));
-        listItem.add(new FeedItem("3523", "sdfata"));
-        listItem.add(new FeedItem("588", "gsdfkgjae"));
-        listItem.add(new FeedItem("558", "qowefhiwaeojfuaowebh"));
-        listItem.add(new FeedItem("32498", "wuerqijehjsf[p"));
-        listItem.add(new FeedItem("76458", "lweyf9qyrbw"));
-        listItem.add(new FeedItem("741", "wuiehfjkbnwae"));
-        listItem.add(new FeedItem("9654", "awehfiuqbwefjkb"));
-        listItem.add(new FeedItem("3248", "aouwefhiubhwefa"));
-        listItem.add(new FeedItem("879847", "ierhghenrsan"));
-        listItem.add(new FeedItem("484", "awuefbubwabue"));
-        listItem.add(new FeedItem("888847", "bjwbefiubiwubef"));
-        listItem.add(new FeedItem("45654", "biwavbecbvifawb"));
+//        listItem.add(new FeedItem("241", "adasd"));
+//        listItem.add(new FeedItem("3523", "sdfata"));
+//        listItem.add(new FeedItem("588", "gsdfkgjae"));
+//        listItem.add(new FeedItem("558", "qowefhiwaeojfuaowebh"));
+//        listItem.add(new FeedItem("32498", "wuerqijehjsf[p"));
+//        listItem.add(new FeedItem("76458", "lweyf9qyrbw"));
+//        listItem.add(new FeedItem("741", "wuiehfjkbnwae"));
+//        listItem.add(new FeedItem("9654", "awehfiuqbwefjkb"));
+//        listItem.add(new FeedItem("3248", "aouwefhiubhwefa"));
+//        listItem.add(new FeedItem("879847", "ierhghenrsan"));
+//        listItem.add(new FeedItem("484", "awuefbubwabue"));
+//        listItem.add(new FeedItem("888847", "bjwbefiubiwubef"));
+//        listItem.add(new FeedItem("45654", "biwavbecbvifawb"));
 
         Feed feed = new Feed(listItem);
 

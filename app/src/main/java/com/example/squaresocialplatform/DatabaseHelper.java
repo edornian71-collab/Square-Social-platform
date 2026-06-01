@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "squaresocial.db";
@@ -66,6 +68,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return found;
+    }
+
+    public ArrayList<FeedItem> fetchItem() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT Post,UserID FROM Posts", null);
+        ArrayList<FeedItem> arrayList = new ArrayList<>();
+
+        while (cursor.moveToNext()){
+            FeedItem feedItem = new FeedItem();
+            Cursor cure = db.rawQuery("SELECT Username FROM Users WHERE UserID=" + cursor.getInt(0), null);
+            feedItem.username = cure.getString(0);
+            feedItem.post = cursor.getString(0);
+
+            arrayList.add(feedItem);
+        }
+
+        return arrayList;
     }
 
 }
