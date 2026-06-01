@@ -7,9 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.databasehelper.DatabaseHelper
+import com.example.squaresocialplatform.DatabaseHelper
 
-class RegisterActivity : Activity() {
+class RegisterActivity : AppCompatActivity() {
 
     // Inputs + button + DB helper
     // (lateinit because we hook them up in onCreate)
@@ -63,13 +63,13 @@ class RegisterActivity : Activity() {
             }
 
             // Check if email already exists in DB
-            if (db.emailExists(email)) {
+            if (db.ifEmailAlreadyExists(email)) {
                 Toast.makeText(this, "Email is already registered", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             // Try to insert user into DB
-            val success = db.registerUser(username, email, password)
+            val success = db.registerUser(username, password, email)
 
             if (success) {
                 // Registration worked — send user to login screen
@@ -83,7 +83,7 @@ class RegisterActivity : Activity() {
         }
 
         btnBack.setOnClickListener{
-            setContentView(R.layout.loginlayout)
+            finish();
         }
     }
 }
