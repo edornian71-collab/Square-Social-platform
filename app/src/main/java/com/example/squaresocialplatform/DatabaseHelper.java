@@ -48,7 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("Email", email);
         long attempt = db.insert("Users", null, values);
         boolean ifAttemptSuccess = attempt != -1;
-        db.close();
         return ifAttemptSuccess;
     }
     public User loginUser(String email, String password) {
@@ -61,12 +60,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             currentUser.email = cursor.getString(cursor.getColumnIndexOrThrow("Email"));
             currentUser.username = cursor.getString(cursor.getColumnIndexOrThrow("Username"));
         } else {
-            cursor.close();
-            db.close();
+
             return null;
         }
-        cursor.close();
-        db.close();
         return currentUser;
     }
 
@@ -75,9 +71,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=?", new String[]{email});
         boolean found = cursor.moveToFirst();
-        cursor.close();
-        db.close();
         return found;
+    }
+
+    public boolean createPost(int userId, String postText) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues postValues = new ContentValues();
+
+        postValues.put("UserId", userId);
+        postValues.put("Content", postText);
+        long postAttempt = db.insert("Posts", null, postValues);
+        return postAttempt != -1;
     }
 
 }
