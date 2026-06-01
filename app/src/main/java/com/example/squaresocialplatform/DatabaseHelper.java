@@ -60,12 +60,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put("Username", username);
-        values.put("Password", password);
-        values.put("Email", email);
-        long attempt = db.insert("Users", null, values);
-        boolean ifAttemptSuccess = attempt != -1;
-        return ifAttemptSuccess;
+        if (!ifEmailAlreadyExists(email)) {
+            values.put("Username", username);
+            values.put("Password", password);
+            values.put("Email", email);
+            long attempt = db.insert("Users", null, values);
+            boolean ifAttemptSuccess = attempt != -1;
+            return ifAttemptSuccess;
+        } else {
+            return false;
+        }
     }
     /**
      * Attempts to log in a user with the given credentials.
