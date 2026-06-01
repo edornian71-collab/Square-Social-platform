@@ -6,6 +6,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Handles creation and access to the local SQLite database.
+ * Provides methods for user registration, login, and post creation.
+ *
+ * <p>Usage: instantiate with a {@link android.content.Context}, then call the relevant method.</p>
+ *
+ * <pre>
+ *     DatabaseHelper db = new DatabaseHelper(context);
+ *     User user = db.loginUser(email, password);
+ * </pre>
+ */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "squaresocial.db";
@@ -39,6 +50,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Users");
         onCreate(db);
     }
+    /**
+     * Registers a new user in the database.
+     *
+     * @param username the user's display name
+     * @param password the user's password
+     * @param email    the user's email address
+     * @return true if registration succeeded, false otherwise
+     */
     public boolean registerUser(String username, String password, String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -50,6 +69,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean ifAttemptSuccess = attempt != -1;
         return ifAttemptSuccess;
     }
+    /**
+     * Attempts to log in a user with the given credentials.
+     *
+     * @param email    the user's email address
+     * @param password the user's password
+     * @return a {@link User} object with id, username, and email if credentials matched, null otherwise
+     */
     public User loginUser(String email, String password) {
         User currentUser;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -67,6 +93,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Checks whether an email address is already registered.
+     *
+     * @param email the email address to check
+     * @return true if the email exists in the database, false otherwise
+     */
     public boolean ifEmailAlreadyExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=?", new String[]{email});
@@ -74,6 +106,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return found;
     }
 
+    /**
+     * Saves a new post to the database.
+     *
+     * @param userId   the ID of the user creating the post
+     * @param postText the text content of the post
+     * @return true if the post was saved successfully, false otherwise
+     */
     public boolean createPost(int userId, String postText) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues postValues = new ContentValues();
