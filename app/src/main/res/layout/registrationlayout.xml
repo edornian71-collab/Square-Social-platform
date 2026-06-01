@@ -5,6 +5,21 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <Button
+        android:id="@+id/backBtn2"
+        android:layout_width="119dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="640dp"
+        android:background="@drawable/avatarimage"
+        android:backgroundTint="@color/squareblue"
+        android:text="back"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/Logo"
         android:layout_width="131dp"
@@ -103,7 +118,6 @@
         android:layout_marginTop="472dp"
         android:text="New Password:"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/email"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -112,17 +126,16 @@
         android:id="@+id/regBtn"
         android:layout_width="201dp"
         android:layout_height="81dp"
-        android:layout_marginTop="552dp"
-        android:text="Register"
+        android:layout_marginTop="544dp"
         android:background="@drawable/avatarimage"
         android:backgroundTint="@color/squareblue"
+        android:text="Register"
         android:textColor="@color/black"
         android:textSize="60px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

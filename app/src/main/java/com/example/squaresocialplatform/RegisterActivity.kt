@@ -17,6 +17,8 @@ class RegisterActivity : Activity() {
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnRegister: Button
+
+    private lateinit var btnBack: Button
     private lateinit var db: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,7 @@ class RegisterActivity : Activity() {
         etEmail = findViewById(R.id.newEmail)
         etPassword = findViewById(R.id.newPass)
         btnRegister = findViewById(R.id.regBtn)
+        btnBack =  findViewById(R.id.backBtn2)
 
         // When user taps "Register"
         btnRegister.setOnClickListener {
@@ -77,6 +80,10 @@ class RegisterActivity : Activity() {
                 // Something went wrong inserting into DB
                 Toast.makeText(this, "Registration failed. Try again.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnBack.setOnClickListener{
+            setContentView(R.layout.loginlayout)
         }
     }
 }
