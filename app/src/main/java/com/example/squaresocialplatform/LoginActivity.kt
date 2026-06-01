@@ -1,37 +1,53 @@
 package com.example.squaresocialplatform
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.ComponentActivity
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.squaresocialplatform.ui.theme.SqaureSocialPlatformTheme
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-class LoginActivity : ComponentActivity() {
+class LoginActivity : AppCompatActivity() {
+
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var btnRegister: Button
+    private lateinit var db: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.loginlayout)
 
-        // input fields and login buttton
-        val emailInput = findViewById<EditText>(R.id.email)
-        val passInput = findViewById<EditText>(R.id.password)
+        db = DatabaseHelper(this)
 
-        val loginBtn = findViewById<Button>(R.id.loginBtn)
+        etEmail = findViewById(R.id.email)
+        etPassword = findViewById(R.id.password)
+        btnLogin = findViewById(R.id.loginBtn)
+        btnRegister = findViewById(R.id.regBtn)
 
-        loginBtn.setOnClickListener {
+        btnLogin.setOnClickListener {
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
 
-            val email = emailInput.text.toString().trim()
-            val password = passInput.text.toString().trim()
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
+            val loggedIn = db.loginUser(email, password)
 
+            if (loggedIn) {
+                Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, CreatePostActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
+            }
         }
 
-
-
-
-
+        btnRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 }
