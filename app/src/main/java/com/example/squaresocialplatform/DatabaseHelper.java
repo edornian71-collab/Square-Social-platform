@@ -28,7 +28,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Your CREATE TABLE statement goes here
         db.execSQL("CREATE TABLE Users (" +
                 "UserId INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Username TEXT, " +
@@ -45,7 +44,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop and recreate for now
         db.execSQL("DROP TABLE IF EXISTS Posts");
         db.execSQL("DROP TABLE IF EXISTS Users");
         onCreate(db);
