@@ -15,6 +15,8 @@ public class Comment extends RecyclerView.Adapter<Comment.MyViewHolder> {
 
         ArrayList<CommentItem> items;
 
+
+
         class MyViewHolder extends RecyclerView.ViewHolder {
             TextView usernameTv;
             TextView commentTv;

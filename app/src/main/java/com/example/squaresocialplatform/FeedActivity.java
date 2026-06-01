@@ -1,7 +1,12 @@
 package com.example.squaresocialplatform;
 
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.database.sqlite.SQLiteOpenHelper;
+
+
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
@@ -14,10 +19,6 @@ import java.util.ArrayList;
 public class FeedActivity extends ComponentActivity {
 
     ArrayList<FeedItem> listItem = new ArrayList<>();
-
-
-
-
 
 
     @Override
@@ -48,6 +49,29 @@ public class FeedActivity extends ComponentActivity {
 
         binding.scroll.setLayoutManager(new LinearLayoutManager(this));
 
+        binding.profile.setOnClickListener(thing -> goToProfile());
 
+        binding.userSwitch.setOnClickListener(thing -> goToLogin());
+
+        binding.createPostButton.setOnClickListener(thing -> goToNewPost());
+
+        // Databasehelper db = new Database
+
+
+    }
+
+    public void goToProfile(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToNewPost(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,8 +1,11 @@
 package com.example.squaresocialplatform;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,11 +20,14 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView usernameTv;
         TextView postTv;
+        Button commentButton;
         public MyViewHolder(@NonNull View itemView) {
 
             super(itemView);
             this.usernameTv = itemView.findViewById(R.id.username);
             this.postTv = itemView.findViewById(R.id.post);
+            this.commentButton = itemView.findViewById(R.id.comments);
+
 
         }
 
@@ -46,6 +52,19 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
+        holder.commentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+
+                Intent intent = new Intent(context, CommentActivity.class);
+
+                intent.putExtra("USER_NAME", currentItem.username);
+
+                context.startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -53,4 +72,6 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
     public int getItemCount() {
         return FeedItems.size();
     }
+
+
 }

@@ -8,6 +8,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back To Feed" />
+
+        <Button
+            android:id="@+id/create_post_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create A New Post" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,7 +38,7 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="92dp"
+            android:layout_height="103dp"
             android:layout_margin="10dp"
             android:orientation="horizontal">
 
@@ -31,30 +53,30 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="0dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginRight="0dp"
                 android:text="Square Social"
                 android:textSize="32sp"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                <Button
+                    android:id="@+id/user_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Switch user" />
 
-            <TextView
-                android:id="@+id/username_comment_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                <Button
+                    android:id="@+id/profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="profile" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/post_comment_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
         </LinearLayout>
 
         <LinearLayout
@@ -66,19 +88,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/comment_scroll"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/back_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
