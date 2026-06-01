@@ -35,9 +35,15 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val loggedIn = db.loginUser(email, password)
+            val loggedInUser = db.loginUser(email, password)
 
-            if (loggedIn) {
+            if (loggedInUser != null) {
+                val prefs = getSharedPreferences("session", MODE_PRIVATE)
+                prefs.edit {
+                    putString("username", loggedInUser.username)
+                    putString("email",loggedInUser.email)
+                    putInt("userId", loggedInUser.id)
+                }
                 Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, CreatePostActivity::class.java))
                 finish()

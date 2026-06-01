@@ -51,14 +51,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return ifAttemptSuccess;
     }
-    public boolean loginUser(String email, String password) {
+    public User loginUser(String email, String password) {
+        User currentUser;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=? AND Password=?", new String[]{email, password});
-        boolean found = cursor.moveToFirst();
+        if(cursor.moveToFirst()) {
+            currentUser = new User();
+            currentUser.id = cursor.getInt(cursor.getColumnIndexOrThrow("UserId"));
+            currentUser.email = cursor.getString(cursor.getColumnIndexOrThrow("Email"));
+            currentUser.username = cursor.getString(cursor.getColumnIndexOrThrow("Username"));
+        } else {
+            cursor.close();
+            db.close();
+            return null;
+        }
         cursor.close();
         db.close();
-        return found;
+        return currentUser;
     }
+
+
     public boolean ifEmailAlreadyExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE Email=?", new String[]{email});
