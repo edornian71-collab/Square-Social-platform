@@ -38,6 +38,12 @@
             android:name=".ProfileFeedActivity"
             android:exported="false"
             android:theme="@style/Theme.SqaureSocialPlatform" />
+        <activity
+            android:name=".CommentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SqaureSocialPlatform"
+            >
+        </activity>
     </application>
 
 </manifest>

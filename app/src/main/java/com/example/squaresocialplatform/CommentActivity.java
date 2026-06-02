@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.squaresocialplatform.databinding.CommentLayoutBinding;
@@ -32,6 +35,12 @@ public class CommentActivity extends ComponentActivity {
         binding.createPostButton2.setOnClickListener(thing -> goToNewPost());
 
         binding.backButton.setOnClickListener(thing -> goToFeed());
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets topBar = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0,topBar.top,0,0);
+            return insets;
+        });
 
     }
 

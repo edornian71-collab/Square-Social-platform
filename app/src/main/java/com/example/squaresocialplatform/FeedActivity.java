@@ -54,6 +54,12 @@ public class FeedActivity extends ComponentActivity {
 //        listItem.add(new FeedItem("888847", "bjwbefiubiwubef"));
 //        listItem.add(new FeedItem("45654", "biwavbecbvifawb"));
 
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets topBar = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0,topBar.top,0,0);
+            return insets;
+        });
+
         feed = new Feed(listItem);
 
         binding.scroll.setAdapter(feed);
