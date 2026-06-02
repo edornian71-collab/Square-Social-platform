@@ -1,23 +1,20 @@
-
-
 <?xml version="1.0" encoding="utf-8"?>
-    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-        <!-- Main item defines the line color and position -->
-        <!-- Use negative values for the sides where you WANT to hide the border -->
-        <item
-            android:left="-3dp"
-            android:right="-3dp"
-            android:top="-3dp"
-            android:bottom="0dp"> <!-- Leaves only the bottom line visible -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="-3dp"
+        android:right="-3dp"
+        android:top="-3dp"
+        android:bottom="0dp">
 
-            <shape android:shape="rectangle">
-                <!-- The solid color defines the color of the single-sided line -->
-                <stroke
-                    android:width="2dp"
-                    android:color="@color/lightgrey" /> <!-- Replace with your line color -->
+        <shape
+            android:shape="rectangle">
 
-                <!-- Optional: Match this with your main layout background color -->
-                <solid android:color="@android:color/transparent" />
-            </shape>
-        </item>
-    </layer-list>
+            <stroke
+                android:width="2dp"
+                android:color="@color/lightgrey" />
+
+
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>
