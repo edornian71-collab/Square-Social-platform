@@ -5,11 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import android.view.WindowInsets;
 
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.squaresocialplatform.databinding.FeedLayoutBinding;
