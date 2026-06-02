@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+// TODO: Posts from logged in user needs to show up in the profile page. Use DatabaseHelper and SharedPreferences if you can.
 public class ProfileFeedActivity extends ComponentActivity {
     DatabaseHelper db = new DatabaseHelper(this);
     ArrayList<ProfileFeedItem> listItem = new ArrayList<>();
