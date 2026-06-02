@@ -20,7 +20,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "squaresocial.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,7 +32,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "UserId INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Username TEXT, " +
                 "Password TEXT, " +
-                "Email TEXT" +
+                "Email TEXT," +
+                "ProfilePicture TEXT" + // this is TEXT because it is referring to a file URI on the phone, not the image itself.
                 ")");
         db.execSQL("CREATE TABLE Posts (" +
                 "PostId INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -108,6 +109,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return found;
     }
 
+    public boolean updateProfilePicture(int userId, String filePath) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues pfpValues = new ContentValues();
+        pfpValues.put("ProfilePicture", filePath);
+        long pfpAttempt = db.update("Users",pfpValues,"UserId=?", new String[]{ String.valueOf(userId)});
+        return pfpAttempt != 0;
+    }
     /**
      * Saves a new post to the database.
      *
