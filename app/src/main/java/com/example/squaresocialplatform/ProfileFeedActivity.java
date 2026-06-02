@@ -82,6 +82,19 @@ public class ProfileFeedActivity extends ComponentActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+    private void loadScaledImage(String path) {
+        BitmapFactory.Options bounds = new BitmapFactory.Options();
+        bounds.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(path, bounds);
+
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inSampleSize = Math.max(bounds.outWidth / 512, bounds.outHeight / 512);
+        if (opts.inSampleSize < 1) opts.inSampleSize = 1;
+
+        Bitmap scaled = BitmapFactory.decodeFile(path, opts);
+        binding.profilePicture.setImageBitmap(scaled);
+    }
+
     private String saveImageToInternalStorage(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
