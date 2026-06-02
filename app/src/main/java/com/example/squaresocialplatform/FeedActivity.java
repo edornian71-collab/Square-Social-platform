@@ -68,7 +68,7 @@ public class FeedActivity extends ComponentActivity {
 
         binding.profile.setOnClickListener(thing -> goToProfile());
 
-        binding.userSwitch.setOnClickListener(thing -> goToLogin());
+        //binding.userSwitch.setOnClickListener(thing -> goToLogin());
 
         binding.createPostButton.setOnClickListener(thing -> goToNewPost());
 

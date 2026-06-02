@@ -30,7 +30,7 @@ public class CommentActivity extends ComponentActivity {
 
         binding.profile.setOnClickListener(thing -> goToProfile());
 
-        binding.userSwitch.setOnClickListener(thing -> goToLogin());
+        // binding.userSwitch.setOnClickListener(thing -> goToLogin());
 
         binding.createPostButton2.setOnClickListener(thing -> goToNewPost());
 
@@ -45,7 +45,7 @@ public class CommentActivity extends ComponentActivity {
     }
 
     public void goToProfile(){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, ProfileFeedActivity.class);
         startActivity(intent);
     }
 
