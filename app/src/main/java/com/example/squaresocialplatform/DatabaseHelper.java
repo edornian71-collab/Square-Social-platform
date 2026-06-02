@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Handles creation and access to the local SQLite database.
  * Provides methods for user registration, login, and post creation.
@@ -33,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Username TEXT, " +
                 "Password TEXT, " +
                 "Email TEXT," +
-                "ProfilePicture TEXT" + // this is TEXT because it is referring to a file URI on the phone, not the image itself.
+                "ProfilePicture TEXT" + // this is TEXT because it is referring to a file URI on the phone, not the image itself.+
                 ")");
         db.execSQL("CREATE TABLE Posts (" +
                 "PostId INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -140,6 +142,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return cursor.getString(cursor.getColumnIndexOrThrow("ProfilePicture"));
         }
         return null;
+    }
+    public ArrayList<FeedItem> getAllPosts() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<FeedItem> feedItems = new ArrayList<FeedItem>();
+        Cursor cursor = db.rawQuery("SELECT Users.Username, Posts.Content FROM Posts JOIN Users ON Posts.UserId = Users.UserId", null);
+        while (cursor.moveToNext()) {
+            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content"))));
+        }
+
+        return feedItems;
     }
 
 }

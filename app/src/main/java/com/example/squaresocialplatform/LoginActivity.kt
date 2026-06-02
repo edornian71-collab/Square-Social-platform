@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                     putInt("userId", loggedInUser.id)
                 }
                 Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, CreatePostActivity::class.java))
+                startActivity(Intent(this, FeedActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
