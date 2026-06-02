@@ -52,18 +52,18 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
-        holder.commentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Context context = view.getContext();
-
-                Intent intent = new Intent(context, CommentActivity.class);
-
-                intent.putExtra("USER_NAME", currentItem.username);
-
-                context.startActivity(intent);
-            }
-        });
+        //holder.commentButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Context context = view.getContext();
+//
+//                Intent intent = new Intent(context, CommentActivity.class);
+//
+//                intent.putExtra("USER_NAME", currentItem.username);
+//
+//                context.startActivity(intent);
+//            }
+//        });
 
     }
 
