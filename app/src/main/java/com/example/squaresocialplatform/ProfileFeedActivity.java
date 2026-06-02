@@ -101,7 +101,7 @@ public class ProfileFeedActivity extends ComponentActivity {
     }
 
     public void goToHome(){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, FeedActivity.class);
         startActivity(intent);
     }
 
