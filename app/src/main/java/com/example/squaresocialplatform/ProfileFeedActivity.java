@@ -2,6 +2,8 @@ package com.example.squaresocialplatform;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +34,7 @@ public class ProfileFeedActivity extends ComponentActivity {
                     String fileLocation = saveImageToInternalStorage(uri);
 
                     db.updateProfilePicture(prefs.getInt("userId", -1), fileLocation);
-                    binding.profilePicture.setImageURI(uri);
+                    loadScaledImage(fileLocation);
 
                 }
 
@@ -68,7 +70,7 @@ public class ProfileFeedActivity extends ComponentActivity {
         binding.profilePicture.setOnClickListener(thing -> galleryLauncher.launch("image/*"));
         String pfpPath = db.getProfilePicture(prefs.getInt("userId", -1));
         if (pfpPath != null) {
-            binding.profilePicture.setImageURI(Uri.fromFile(new File(pfpPath)));
+            loadScaledImage(pfpPath);
         }
 
     }
