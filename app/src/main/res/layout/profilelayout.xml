@@ -60,11 +60,11 @@
         android:layout_width="59dp"
         android:layout_height="60dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="256dp"
         android:src="@drawable/switchacc_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toEndOf="@+id/goHome"
         app:layout_constraintTop_toTopOf="parent" />
 

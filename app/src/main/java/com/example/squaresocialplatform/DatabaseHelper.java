@@ -132,5 +132,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long postAttempt = db.insert("Posts", null, postValues);
         return postAttempt != -1;
     }
+    public String getProfilePicture(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT ProfilePicture FROM Users WHERE UserId = ?", new String[]{ String.valueOf(userId)});
+
+        if (cursor.moveToFirst()) {
+            return cursor.getString(cursor.getColumnIndexOrThrow("ProfilePicture"));
+        }
+        return null;
+    }
 
 }
