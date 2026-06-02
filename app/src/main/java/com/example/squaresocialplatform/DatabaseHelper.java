@@ -153,5 +153,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return feedItems;
     }
+    public ArrayList<FeedItem> getSpecificUserPosts(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<FeedItem> feedItems = new ArrayList<>();
+        Cursor cursor = db. rawQuery("SELECT Users.Username, Posts.Content FROM Posts JOIN Users ON Posts.UserId = Users.UserId WHERE Posts.UserId = ?", new String[]{ String.valueOf(userId)});
+        while (cursor.moveToNext()) {
+            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content"))));
+        }
+        return feedItems;
+    }
 
 }
