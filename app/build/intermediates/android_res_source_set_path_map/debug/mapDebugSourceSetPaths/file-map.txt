@@ -1,8 +1,0 @@
-com.example.squaresocialplatform.app-pngs-0 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\build\generated\res\pngs\debug
-com.example.squaresocialplatform.app-updated_navigation_xml-1 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\build\generated\updated_navigation_xml\debug
-com.example.squaresocialplatform.app-packageDebugResources-2 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.squaresocialplatform.app-packageDebugResources-3 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.squaresocialplatform.app-debug-4 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.squaresocialplatform.app-debug-5 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\debug\res
-com.example.squaresocialplatform.app-main-6 C:\Users\hennig3326\AndroidStudioProjects\Square-Social-platform\app\src\main\res
-gradleHome-0 C:\Users\hennig3326\.gradle
