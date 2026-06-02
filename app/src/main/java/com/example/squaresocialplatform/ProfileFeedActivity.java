@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-// TODO: Posts from logged in user needs to show up in the profile page. Use DatabaseHelper and SharedPreferences if you can.
+
 public class ProfileFeedActivity extends ComponentActivity {
     DatabaseHelper db = new DatabaseHelper(this);
     ArrayList<ProfileFeedItem> listItem = new ArrayList<>();
@@ -60,7 +60,31 @@ public class ProfileFeedActivity extends ComponentActivity {
 //        listItem.add(new ProfileFeedItem("Username", "I'm going to eat that entire ****ing pie"));
 //        listItem.add(new ProfileFeedItem("Username", "hopital"));
 
+        // TODO: Posts from logged in user needs to show up in the profile page. Use DatabaseHelper and SharedPreferences if you can.
+
+
+        int userId = prefs.getInt("userId", -1);
+
+// Initialize database helper
+        DatabaseHelper db = new DatabaseHelper(this);
+
+// Fetch posts from DB
+        ArrayList<FeedItem> rawPosts = db.getSpecificUserPosts(userId);
+
+// Convert FeedItem - ProfileFeedItem
+        ArrayList<ProfileFeedItem> listItem = new ArrayList<>();
+        for (FeedItem item : rawPosts) {
+            String username = item.username;   //  FeedItem
+            String content = item.post;        //  FeedItem
+
+            listItem.add(new ProfileFeedItem(username, content));
+        }
+
+// Create adapter AFTER list is filled
         ProfileFeed pf = new ProfileFeed(listItem);
+
+
+
 
         binding.usersPosts.setAdapter(pf);
         binding.usersPosts.setLayoutManager(new LinearLayoutManager(this));
