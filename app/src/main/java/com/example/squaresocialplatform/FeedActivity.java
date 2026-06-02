@@ -81,7 +81,7 @@ public class FeedActivity extends ComponentActivity {
 
 
     public void goToProfile(){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, ProfileFeedActivity.class);
         startActivity(intent);
     }
 
