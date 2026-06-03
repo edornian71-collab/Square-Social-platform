@@ -13,6 +13,9 @@ import androidx.activity.ComponentActivity;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.squaresocialplatform.databinding.ProfilelayoutBinding;
@@ -59,6 +62,13 @@ public class ProfileFeedActivity extends ComponentActivity {
 //        listItem.add(new ProfileFeedItem("Username", "btw we're all in the matrix lol"));
 //        listItem.add(new ProfileFeedItem("Username", "I'm going to eat that entire ****ing pie"));
 //        listItem.add(new ProfileFeedItem("Username", "hopital"));
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets topBar = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0,topBar.top,0,0);
+            return insets;
+        });
 
         // TODO: Posts from logged in user needs to show up in the profile page. Use DatabaseHelper and SharedPreferences if you can.
 

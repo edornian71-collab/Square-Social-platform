@@ -64,17 +64,19 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/user_switch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Switch user" />
+<!--                <Button-->
+<!--                    android:id="@+id/user_switch"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Switch user" />-->
 
                 <Button
                     android:id="@+id/profile"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="profile" />
+                    android:layout_height="match_parent"
+                    android:background="@drawable/top_buttons"
+                    android:text="profile"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </LinearLayout>
@@ -88,7 +90,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/comment_scroll"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/feed_border">
 
             </androidx.recyclerview.widget.RecyclerView>
 

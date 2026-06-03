@@ -5,11 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import android.view.WindowInsets;
 
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.squaresocialplatform.databinding.FeedLayoutBinding;
@@ -51,6 +54,12 @@ public class FeedActivity extends ComponentActivity {
 //        listItem.add(new FeedItem("888847", "bjwbefiubiwubef"));
 //        listItem.add(new FeedItem("45654", "biwavbecbvifawb"));
 
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            Insets topBar = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0,topBar.top,0,0);
+            return insets;
+        });
+
         feed = new Feed(listItem);
 
         binding.scroll.setAdapter(feed);
@@ -59,7 +68,7 @@ public class FeedActivity extends ComponentActivity {
 
         binding.profile.setOnClickListener(thing -> goToProfile());
 
-        binding.userSwitch.setOnClickListener(thing -> goToLogin());
+        //binding.userSwitch.setOnClickListener(thing -> goToLogin());
 
         binding.createPostButton.setOnClickListener(thing -> goToNewPost());
 

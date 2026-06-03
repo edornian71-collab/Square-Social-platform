@@ -20,13 +20,13 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView usernameTv;
         TextView postTv;
-        Button commentButton;
+       // Button commentButton;
         public MyViewHolder(@NonNull View itemView) {
 
             super(itemView);
             this.usernameTv = itemView.findViewById(R.id.username);
             this.postTv = itemView.findViewById(R.id.post);
-            this.commentButton = itemView.findViewById(R.id.comments);
+         //   this.commentButton = itemView.findViewById(R.id.comments);
 
 
         }
@@ -52,6 +52,18 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
+        //holder.commentButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Context context = view.getContext();
+//
+//                Intent intent = new Intent(context, CommentActivity.class);
+//
+//                intent.putExtra("USER_NAME", currentItem.username);
+//
+//                context.startActivity(intent);
+//            }
+//        });
         if (currentItem.isExpanded) {
             holder.postTv.setMaxLines(Integer.MAX_VALUE);
         } else {

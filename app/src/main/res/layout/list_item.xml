@@ -17,14 +17,15 @@
         android:background="@drawable/post_bg">
 
         <TextView
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
-
             android:id="@+id/username"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="8dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:background="@drawable/username_underline"/>
 
         <TextView
             android:id="@+id/post"
@@ -33,13 +34,13 @@
             android:layout_marginHorizontal="12dp"
             android:text="TextView" />
 
-        <Button
-            android:id="@+id/comments"
-            android:layout_width="108dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="0dp"
-            android:text="Comments" />
+<!--        <Button-->
+<!--            android:id="@+id/comments"-->
+<!--            android:layout_width="108dp"-->
+<!--            android:layout_height="49dp"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:text="Comments" />-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
