@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-             android:layout_height="match_parent">
+             android:layout_height="match_parent"
+    android:background="@color/squareblue"
+    >
 
     <ImageView
         android:id="@+id/profilePicture"
         android:layout_width="132dp"
         android:layout_height="142dp"
         android:layout_marginStart="141dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="142dp"
-        android:src="@drawable/copper_stockpfp"
         android:scaleType="centerCrop"
+        android:src="@drawable/copper_stockpfp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +29,7 @@
         android:layout_marginTop="13dp"
         android:layout_marginEnd="136dp"
         android:text="Username"
+        android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -40,6 +44,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="1dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
