@@ -52,6 +52,19 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
 
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
+        if (currentItem.isExpanded) {
+            holder.postTv.setMaxLines(Integer.MAX_VALUE);
+        } else {
+            holder.postTv.setMaxLines(4);
+        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                currentItem.isExpanded = !currentItem.isExpanded;
+                notifyItemChanged(holder.getBindingAdapterPosition());
+            }
+        });
         holder.commentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
