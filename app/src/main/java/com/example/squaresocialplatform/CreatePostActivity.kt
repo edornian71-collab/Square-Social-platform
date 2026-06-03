@@ -2,6 +2,7 @@ package com.example.squaresocialplatform
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -10,6 +11,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.OnApplyWindowInsetsListener
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 
 class CreatePostActivity : AppCompatActivity() {
@@ -40,6 +44,15 @@ class CreatePostActivity : AppCompatActivity() {
             v.performClick()
             false
         }
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+            findViewById(R.id.createPostLayout),
+            OnApplyWindowInsetsListener { v: View?, insets: WindowInsetsCompat? ->
+                val topBar = insets!!.getInsets(WindowInsetsCompat.Type.systemBars())
+                v!!.setPadding(0, topBar.top, 0, 0)
+                insets
+            })
 
         username.text = savedUsername
 
