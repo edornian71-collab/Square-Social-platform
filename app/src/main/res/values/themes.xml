@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SqaureSocialPlatform" parent="Theme.AppCompat.Light.NoActionBar" />
+    <style name="Theme.SqaureSocialPlatform" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@color/squareblue</item>
+        <item name="android:colorSecondary">@color/squarePurple</item>
+        <item name="android:autofilledHighlight">@color/lightgrey</item>
+    </style>
+
 </resources>
