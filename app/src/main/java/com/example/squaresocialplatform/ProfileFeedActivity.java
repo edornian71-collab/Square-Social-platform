@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.ComponentActivity;
 import androidx.activity.result.ActivityResultLauncher;
@@ -53,7 +54,7 @@ public class ProfileFeedActivity extends ComponentActivity {
         View view = binding.getRoot();
         setContentView(view);
         prefs = getSharedPreferences("session", MODE_PRIVATE);
-        profileUsername = findViewById(R.id.usernameProfile);
+        TextView profileUsername = findViewById(R.id.usernameProfile);
         profileUsername.setText(prefs.getString("username", "NULL"));
 
 
