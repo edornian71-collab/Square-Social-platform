@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,7 +104,18 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
         if (opts.inSampleSize < 1) opts.inSampleSize = 1;
 
         Bitmap scaled = BitmapFactory.decodeFile(path, opts);
-        holder.pfpTv.setImageBitmap(scaled);
+        if (scaled == null) return;
+
+        int size = Math.min(scaled.getWidth(), scaled.getHeight());
+        Bitmap circle = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(circle);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        float radius = size / 2f;
+        canvas.drawCircle(radius, radius, radius, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(scaled, (size - scaled.getWidth()) / 2f, (size - scaled.getHeight()) / 2f, paint);
+
+        holder.pfpTv.setImageBitmap(circle);
     }
 
 
