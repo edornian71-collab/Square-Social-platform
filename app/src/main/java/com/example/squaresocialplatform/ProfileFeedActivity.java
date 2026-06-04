@@ -53,6 +53,9 @@ public class ProfileFeedActivity extends ComponentActivity {
         View view = binding.getRoot();
         setContentView(view);
         prefs = getSharedPreferences("session", MODE_PRIVATE);
+        profileUsername = findViewById(R.id.usernameProfile);
+        profileUsername.setText(prefs.getString("username", "NULL"));
+
 
 //        listItem.add(new ProfileFeedItem("Username", "random bs"));
 //        listItem.add(new ProfileFeedItem("Username", "if the shoe fish"));
