@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/feedpfp"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_margin="4dp"

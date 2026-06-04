@@ -146,9 +146,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<FeedItem> getAllPosts() {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<FeedItem> feedItems = new ArrayList<FeedItem>();
-        Cursor cursor = db.rawQuery("SELECT Users.Username, Posts.Content FROM Posts JOIN Users ON Posts.UserId = Users.UserId", null);
+        Cursor cursor = db.rawQuery("SELECT Users.Username, Posts.Content, Users.ProfilePicture FROM Posts JOIN Users ON Posts.UserId = Users.UserId", null);
         while (cursor.moveToNext()) {
-            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content"))));
+            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content")),cursor.getString(cursor.getColumnIndexOrThrow("ProfilePicture"))));
         }
 
         return feedItems;
@@ -156,9 +156,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<FeedItem> getSpecificUserPosts(int userId) {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<FeedItem> feedItems = new ArrayList<>();
-        Cursor cursor = db. rawQuery("SELECT Users.Username, Posts.Content FROM Posts JOIN Users ON Posts.UserId = Users.UserId WHERE Posts.UserId = ?", new String[]{ String.valueOf(userId)});
+        Cursor cursor = db. rawQuery("SELECT Users.Username, Posts.Content, Users.ProfilePicture FROM Posts JOIN Users ON Posts.UserId = Users.UserId WHERE Posts.UserId = ?", new String[]{ String.valueOf(userId)});
         while (cursor.moveToNext()) {
-            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content"))));
+            feedItems.add(new FeedItem(cursor.getString(cursor.getColumnIndexOrThrow("Username")), cursor.getString(cursor.getColumnIndexOrThrow("Content")),cursor.getString(cursor.getColumnIndexOrThrow("ProfilePicture"))));
         }
         return feedItems;
     }

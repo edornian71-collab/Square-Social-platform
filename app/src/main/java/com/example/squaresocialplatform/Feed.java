@@ -2,12 +2,17 @@ package com.example.squaresocialplatform;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,11 +26,16 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
         TextView usernameTv;
         TextView postTv;
        // Button commentButton;
+        ImageView pfpTv;
+
+
         public MyViewHolder(@NonNull View itemView) {
 
             super(itemView);
             this.usernameTv = itemView.findViewById(R.id.username);
             this.postTv = itemView.findViewById(R.id.post);
+
+            this.pfpTv = itemView.findViewById(R.id.feedpfp);
          //   this.commentButton = itemView.findViewById(R.id.comments);
 
 
@@ -49,9 +59,10 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull Feed.MyViewHolder holder, int position) {
         FeedItem currentItem = FeedItems.get(position);
-
         holder.usernameTv.setText(currentItem.username);
         holder.postTv.setText(currentItem.post);
+        loadScaledImage(holder, currentItem.pfpFeed);
+
         //holder.commentButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -79,12 +90,26 @@ public class Feed extends RecyclerView.Adapter<Feed.MyViewHolder> {
         });
 
     }
+    public void loadScaledImage (@NonNull Feed.MyViewHolder holder,String path) {
+        BitmapFactory.Options bounds = new BitmapFactory.Options();
+        bounds.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(path, bounds);
+
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inSampleSize = Math.max(bounds.outWidth / 55, bounds.outHeight / 55);
+        if (opts.inSampleSize < 1) opts.inSampleSize = 1;
+
+        Bitmap scaled = BitmapFactory.decodeFile(path, opts);
+        holder.pfpTv.setImageBitmap(scaled);
+    }
 
 
     @Override
     public int getItemCount() {
         return FeedItems.size();
     }
+
+
 
 
 }
